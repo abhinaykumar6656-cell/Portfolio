@@ -1,0 +1,518 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #000;
+  --text: #fff;
+  --secondary: rgba(255,255,255,0.65);
+  --border: rgba(255,255,255,0.08);
+  --accent: #d3c36a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Segoe UI",
+    sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+/* =========================
+   COMMON
+========================= */
+
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-label {
+  font-size: 14px;
+  letter-spacing: 8px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 60px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  padding: 0 80px;
+  gap: 40px;
+}
+
+.hero-left {
+  font-size: 1.1rem;
+  line-height: 1.1;
+  color: var(--secondary);
+}
+
+.hero-center h1 {
+  font-size: clamp(6rem, 12vw, 10rem);
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -4px;
+}
+
+.hero-right p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--secondary);
+  margin-bottom: 40px;
+}
+
+.hero-right button {
+  border: none;
+  background: white;
+  color: black;
+  padding: 20px 50px;
+  border-radius: 999px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .35s ease;
+}
+
+.hero-right button:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 120px 80px;
+}
+
+.about-text {
+  max-width: 1300px;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: -3px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+  padding: 120px 80px;
+}
+
+.project {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.project span {
+  color: rgba(255,255,255,0.4);
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+}
+
+.project h2 {
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 0.95;
+  margin-bottom: 20px;
+  letter-spacing: -3px;
+}
+
+.project p {
+  font-size: 1.3rem;
+  color: var(--secondary);
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+  min-height: 140vh;
+  padding-bottom: 250px;
+  padding: 120px 80px;
+}
+
+.skills-title {
+  font-size: clamp(3rem, 6vw, 5rem);
+  max-width: 1000px;
+  line-height: 1.1;
+  margin-bottom: 70px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 24px;
+}
+
+.skill-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 35px;
+  font-size: 1.2rem;
+  background: rgba(255,255,255,0.02);
+
+  transition: all .35s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.04);
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience {
+  min-height: 100vh;
+  padding: 120px 80px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 70px;
+  padding: 50px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-item span {
+  min-width: 180px;
+  color: rgba(255,255,255,0.45);
+}
+
+.timeline-item h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.timeline-item p {
+  max-width: 800px;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 80px;
+}
+
+.contact-title {
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 1;
+  max-width: 1100px;
+  margin-bottom: 50px;
+}
+
+.contact-links {
+  margin-bottom: 40px;
+}
+
+.contact-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.social-icons {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2.2rem;
+  transition: all .3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-6px);
+  color: var(--accent);
+}
+
+.resume-btn {
+  width: fit-content;
+  border: none;
+  background: white;
+  color: black;
+  padding: 18px 40px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+    gap: 30px;
+  }
+
+  .about,
+  .projects,
+  .skills,
+  .experience,
+  .contact {
+    padding: 80px 24px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-center h1 {
+    font-size: 4.5rem;
+  }
+
+  .about-text,
+  .contact-title {
+    font-size: 3rem;
+  }
+
+  .project h2 {
+    font-size: 4rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.social-icons {
+  display: flex;
+  gap: 30px;
+  margin: 30px 0 50px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2.5rem;
+  transition: all 0.35s ease;
+}
+
+.social-icons a:hover {
+  color: #d3c36a;
+  transform: translateY(-8px) scale(1.15);
+}
+
+/* Prevent GSAP from hiding icons */
+
+.no-animation,
+.no-animation * {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Social Icons */
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin: 40px 0;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #d3c36a;
+  transform: translateY(-6px) scale(1.15) !important;
+}
+
+.contact-email {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #d3c36a;
+  transform: translateY(-6px) scale(1.1);
+}
+
+.no-animation,
+.no-animation * {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* =========================
+   GSAP OPTIMIZATION
+========================= */
+
+.about-text,
+.project,
+.skill-card,
+.timeline-item,
+.contact-title,
+.contact-email,
+.resume-btn {
+  will-change: transform, opacity;
+}
+
+/* EDUCATION */
+
+.education {
+  min-height: 100vh;
+  padding: 120px 80px;
+}
+
+.education-score {
+  margin-top: 10px;
+  color: #d3c36a;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* APPLE STYLE PROJECT HOVER */
+
+.project h2 {
+  transition: transform 0.4s ease;
+}
+
+.project:hover h2 {
+  transform: translateX(20px);
+}
+
+/* APPLE STYLE SKILLS */
+
+.skill-card {
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  border-color: #d3c36a;
+}
+
+/* CONTACT ICONS */
+
+.social-icons a {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+  .education {
+    padding: 80px 24px;
+  }
+}
+
+/* PROJECT LINKS */
+
+.project-link {
+  margin-top: 25px;
+  display: inline-block;
+  color: #d3c36a;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  transform: translateX(8px);
+}
+
+/* EXPERIENCE LINKS */
+
+.experience-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #d3c36a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.experience-link:hover {
+  transform: translateX(8px);
+}
