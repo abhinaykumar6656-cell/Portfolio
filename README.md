@@ -8,7 +8,7 @@ Uploading Screen Recording 2026-05-29 at 6.12.44 PM.mp4…
 
 Deployed Link
 
-https://portfolio-abhinaykumar6656-cells-projects.vercel.app/
+https://portfolioabhinayportfolio.netlify.app/
 
 
 # React + Vite
